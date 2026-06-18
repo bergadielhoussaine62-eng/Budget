@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Budget Car Rental Riyadh | Affordable & Reliable Car Hire</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Budget Car Rental Riyadh | تأجير سيارات الرياض</title>
+
+<meta name="description" content="Budget Car Rental Riyadh offers affordable daily, weekly and monthly car rentals in Riyadh. خدمة تأجير سيارات بأسعار مناسبة في الرياض.">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,14 +16,22 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f0f;
+font-family:'Poppins',sans-serif;
+background:#0c0c0c;
 color:#fff;
-line-height:1.6;
+overflow-x:hidden;
+}
+
+.ar{
+font-family:'Cairo',sans-serif;
+display:none;
 }
 
 .container{
@@ -32,14 +43,15 @@ margin:auto;
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 background:rgba(0,0,0,.95);
 backdrop-filter:blur(10px);
-z-index:1000;
+z-index:999;
 border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-nav{
+.nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -49,45 +61,47 @@ padding:18px 0;
 .logo{
 font-size:28px;
 font-weight:800;
-color:#f5c542;
+color:#fbbf24;
 }
 
-nav ul{
+.nav-links{
 display:flex;
-list-style:none;
-gap:25px;
+gap:30px;
 }
 
-nav ul li a{
-text-decoration:none;
+.nav-links a{
 color:#fff;
+text-decoration:none;
 font-weight:500;
 transition:.3s;
 }
 
-nav ul li a:hover{
-color:#f5c542;
+.nav-links a:hover{
+color:#fbbf24;
+}
+
+.lang-switch{
+padding:10px 18px;
+background:#fbbf24;
+color:#000;
+border:none;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
 }
 
 .hero{
-height:100vh;
-background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') center/cover;
+min-height:100vh;
 display:flex;
 align-items:center;
-position:relative;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.75);
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
+background-size:cover;
+background-position:center;
 }
 
 .hero-content{
-position:relative;
-z-index:2;
 max-width:700px;
 }
 
@@ -97,43 +111,44 @@ line-height:1.1;
 margin-bottom:20px;
 }
 
-.hero span{
-color:#f5c542;
+.hero p{
+font-size:20px;
+color:#d1d5db;
+margin-bottom:35px;
 }
 
-.hero p{
-font-size:18px;
-color:#ddd;
-margin-bottom:30px;
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:15px 32px;
+padding:16px 34px;
 border-radius:50px;
 text-decoration:none;
 font-weight:700;
-margin-right:10px;
 transition:.3s;
+display:inline-block;
 }
 
-.btn-primary{
-background:#f5c542;
-color:#111;
+.primary{
+background:#fbbf24;
+color:#000;
 }
 
-.btn-primary:hover{
+.primary:hover{
 transform:translateY(-3px);
 }
 
-.btn-outline{
-border:2px solid #f5c542;
-color:#f5c542;
+.secondary{
+border:2px solid #fff;
+color:#fff;
 }
 
-.btn-outline:hover{
-background:#f5c542;
-color:#111;
+.secondary:hover{
+background:#fff;
+color:#000;
 }
 
 section{
@@ -142,17 +157,7 @@ padding:100px 0;
 
 .section-title{
 text-align:center;
-font-size:42px;
-margin-bottom:15px;
-}
-
-.section-title span{
-color:#f5c542;
-}
-
-.section-sub{
-text-align:center;
-color:#aaa;
+font-size:45px;
 margin-bottom:50px;
 }
 
@@ -163,92 +168,49 @@ gap:25px;
 }
 
 .card{
-background:#181818;
+background:#141414;
 padding:30px;
 border-radius:20px;
-transition:.4s;
-border:1px solid rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-border-color:#f5c542;
+transform:translateY(-8px);
 }
 
 .card h3{
 margin-bottom:15px;
-color:#f5c542;
+color:#fbbf24;
 }
 
-.fleet{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-}
-
-.car{
-background:#181818;
-border-radius:20px;
-overflow:hidden;
-}
-
-.car img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.car-content{
-padding:25px;
-}
-
-.car-content h3{
-margin-bottom:10px;
-}
-
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.review{
-background:#181818;
-padding:30px;
-border-radius:20px;
-}
-
-.review h4{
-margin-top:15px;
-color:#f5c542;
-}
-
-.contact{
+.contact-box{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 }
 
-.contact-box{
-background:#181818;
-padding:35px;
+.contact-info{
+background:#141414;
+padding:40px;
 border-radius:20px;
 }
 
-.contact-box h3{
+.contact-info h3{
 margin-bottom:20px;
-color:#f5c542;
+color:#fbbf24;
 }
 
-.contact-box p{
+.contact-info p{
 margin-bottom:15px;
+line-height:1.8;
 }
 
 footer{
-background:#090909;
+padding:30px;
 text-align:center;
-padding:35px;
-margin-top:50px;
+border-top:1px solid rgba(255,255,255,.08);
+color:#aaa;
 }
 
 .whatsapp{
@@ -257,23 +219,14 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 22px;
-border-radius:50px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
 text-decoration:none;
-font-weight:700;
-z-index:999;
-}
-
-.call{
-position:fixed;
-bottom:85px;
-right:20px;
-background:#f5c542;
-color:#111;
-padding:15px 22px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
 z-index:999;
 }
 
@@ -283,11 +236,11 @@ z-index:999;
 font-size:42px;
 }
 
-nav ul{
+.nav-links{
 display:none;
 }
 
-.contact{
+.contact-box{
 grid-template-columns:1fr;
 }
 
@@ -295,47 +248,58 @@ grid-template-columns:1fr;
 
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="container">
-<nav>
+<div class="container nav">
 
 <div class="logo">BUDGET</div>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#fleet">Fleet</a></li>
-<li><a href="#reviews">Reviews</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#fleet">Fleet</a>
+<a href="#contact">Contact</a>
+</div>
 
-</nav>
+<button class="lang-switch" onclick="toggleLanguage()">العربية</button>
+
 </div>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
 
 <div class="container">
 
 <div class="hero-content">
 
-<h1>Affordable <span>Car Rental</span> In Riyadh</h1>
-
+<div class="en">
+<h1>Affordable Car Rental in Riyadh</h1>
 <p>
-Reliable vehicles, competitive prices, airport pickup,
-daily rentals, weekly rentals, and long-term leasing solutions
-for residents and visitors across Riyadh.
+Daily, Weekly & Monthly Car Rentals with Fast Service,
+Competitive Rates and Convenient Pickup Locations.
 </p>
+</div>
 
-<a href="https://wa.me/966536276946" class="btn btn-primary">
-WhatsApp Now
-</a>
+<div class="ar">
+<h1>تأجير سيارات بأسعار مناسبة في الرياض</h1>
+<p>
+تأجير يومي وأسبوعي وشهري مع خدمة سريعة وأسعار منافسة
+ومواقع استلام مريحة داخل الرياض.
+</p>
+</div>
 
-<a href="tel:+966536276946" class="btn btn-outline">
+<div class="btns">
+
+<a href="tel:+966536276946" class="btn primary">
 Call Now
 </a>
+
+<a href="https://wa.me/966536276946" class="btn secondary">
+WhatsApp
+</a>
+
+</div>
 
 </div>
 
@@ -347,41 +311,29 @@ Call Now
 
 <div class="container">
 
-<h2 class="section-title">Our <span>Services</span></h2>
-
-<p class="section-sub">
-Professional car rental solutions tailored to your needs.
-</p>
+<h2 class="section-title en">Our Services</h2>
+<h2 class="section-title ar">خدماتنا</h2>
 
 <div class="services">
 
 <div class="card">
-<h3>Daily Rentals</h3>
-<p>
-Flexible daily vehicle rentals for business trips,
-vacations, and personal transportation.
-</p>
+<h3>Daily Rental</h3>
+<p>Flexible daily rental options.</p>
 </div>
 
 <div class="card">
-<h3>Weekly Rentals</h3>
-<p>
-Affordable weekly rental packages with excellent value.
-</p>
+<h3>Weekly Rental</h3>
+<p>Affordable weekly packages.</p>
 </div>
 
 <div class="card">
-<h3>Monthly Rentals</h3>
-<p>
-Long-term rental options for residents and professionals.
-</p>
+<h3>Monthly Rental</h3>
+<p>Long-term rental solutions.</p>
 </div>
 
 <div class="card">
 <h3>Airport Pickup</h3>
-<p>
-Convenient airport vehicle pickup and drop-off services.
-</p>
+<p>Convenient vehicle pickup service.</p>
 </div>
 
 </div>
@@ -394,82 +346,24 @@ Convenient airport vehicle pickup and drop-off services.
 
 <div class="container">
 
-<h2 class="section-title">Our <span>Fleet</span></h2>
+<h2 class="section-title en">Available Vehicles</h2>
+<h2 class="section-title ar">السيارات المتوفرة</h2>
 
-<p class="section-sub">
-Choose from economy cars, sedans, SUVs and premium vehicles.
-</p>
+<div class="services">
 
-<div class="fleet">
-
-<div class="car">
-<img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
-<div class="car-content">
+<div class="card">
 <h3>Economy Cars</h3>
-<p>
-Fuel-efficient and affordable options for everyday travel.
-</p>
-</div>
+<p>Fuel efficient and budget friendly.</p>
 </div>
 
-<div class="car">
-<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80">
-<div class="car-content">
-<h3>Luxury Sedans</h3>
-<p>
-Comfortable and stylish vehicles for executives and families.
-</p>
-</div>
+<div class="card">
+<h3>SUVs</h3>
+<p>Comfortable family vehicles.</p>
 </div>
 
-<div class="car">
-<img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80">
-<div class="car-content">
-<h3>SUV Rentals</h3>
-<p>
-Spacious SUVs ideal for group travel and road trips.
-</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="reviews">
-
-<div class="container">
-
-<h2 class="section-title">Customer <span>Reviews</span></h2>
-
-<p class="section-sub">
-Trusted by customers across Riyadh.
-</p>
-
-<div class="reviews">
-
-<div class="review">
-<p>
-"Great service, clean vehicle, and easy pickup process.
-Highly recommended."
-</p>
-<h4>★★★★★</h4>
-</div>
-
-<div class="review">
-<p>
-"Professional staff and very competitive rental prices."
-</p>
-<h4>★★★★★</h4>
-</div>
-
-<div class="review">
-<p>
-"Excellent experience. Booking was quick and simple."
-</p>
-<h4>★★★★★</h4>
+<div class="card">
+<h3>Luxury Cars</h3>
+<p>Premium driving experience.</p>
 </div>
 
 </div>
@@ -482,44 +376,39 @@ Highly recommended."
 
 <div class="container">
 
-<h2 class="section-title">Contact <span>Us</span></h2>
-
-<p class="section-sub">
-Book your vehicle today.
-</p>
-
-<div class="contact">
+<h2 class="section-title en">Contact Us</h2>
+<h2 class="section-title ar">تواصل معنا</h2>
 
 <div class="contact-box">
 
-<h3>Contact Information</h3>
+<div class="contact-info">
 
-<p><strong>Phone:</strong> +966 53 627 6946</p>
+<h3>Budget Riyadh</h3>
 
-<p><strong>WhatsApp:</strong> +966 53 627 6946</p>
+<p>
+📍 2222 Ishiblia 7577, Al Sahaba Rd,
+Riyadh 13226, Saudi Arabia
+</p>
 
-<p><strong>Address:</strong><br>
-2222 Ishiblia 7577,<br>
-Al Sahaba Rd,<br>
-Riyadh 13226,<br>
-Saudi Arabia
+<p>
+📞 +966 53 627 6946
+</p>
+
+<p>
+💬 WhatsApp Available
 </p>
 
 </div>
 
-<div class="contact-box">
+<div class="contact-info">
 
-<h3>Business Hours</h3>
+<h3>Working Hours</h3>
 
-<p>Monday - Sunday</p>
+<p>Saturday - Thursday</p>
 
-<p>Open Daily</p>
+<p>08:00 AM - 11:00 PM</p>
 
-<p>Fast response via phone and WhatsApp.</p>
-
-<a href="https://wa.me/966536276946" class="btn btn-primary">
-Book Via WhatsApp
-</a>
+<p>Fast Customer Support</p>
 
 </div>
 
@@ -530,26 +419,49 @@ Book Via WhatsApp
 </section>
 
 <footer>
-
-<h3>Budget Car Rental Riyadh</h3>
-
-<p>
-Affordable • Reliable • Professional
-</p>
-
-<p style="margin-top:10px;">
-© 2026 Budget Car Rental. All Rights Reserved.
-</p>
-
+© 2026 Budget Riyadh. All Rights Reserved.
 </footer>
 
-<a class="call" href="tel:+966536276946">
-📞 Call Now
+<a href="https://wa.me/966536276946" class="whatsapp">
+💬
 </a>
 
-<a class="whatsapp" href="https://wa.me/966536276946">
-WhatsApp
-</a>
+<script>
+
+let arabic=false;
+
+function toggleLanguage(){
+
+arabic=!arabic;
+
+const en=document.querySelectorAll('.en');
+const ar=document.querySelectorAll('.ar');
+
+if(arabic){
+
+document.documentElement.lang="ar";
+document.documentElement.dir="rtl";
+
+en.forEach(e=>e.style.display="none");
+ar.forEach(e=>e.style.display="block");
+
+document.querySelector('.lang-switch').innerHTML='English';
+
+}else{
+
+document.documentElement.lang="en";
+document.documentElement.dir="ltr";
+
+en.forEach(e=>e.style.display="block");
+ar.forEach(e=>e.style.display="none");
+
+document.querySelector('.lang-switch').innerHTML='العربية';
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
